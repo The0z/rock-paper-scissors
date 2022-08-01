@@ -36,3 +36,7 @@ Function getRockPaperScissor
 Function getNumFromString
     takes in a string being "Rock", "Paper", or "Scissors"
     returns the number value equivalent to it. 
+
+Function capitalizeString
+    takes in a string and returns the capitalized version of it
+    uses slice, toUpperCase, and toLowerCase built-in functions.
