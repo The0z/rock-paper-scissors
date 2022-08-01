@@ -38,7 +38,7 @@ function getRockPaperScissor (num){
  */
 function getPlayerChoice(){
     let playerChoice = "";
-    let noChoice = True;
+    let noChoice = true;
     
     while (noChoice){
         playerChoice = prompt("Please enter Rock, Paper, or Scissor", "");
