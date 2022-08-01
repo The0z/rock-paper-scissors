@@ -1,0 +1,31 @@
+Main Functions:
+Function getComputerChoice
+    acts as the computers choice
+    uses a random number generator to randomly return a number
+    this number will correlate to either Rock, Paper, or Scissors
+    then returns computerChoice
+
+
+Function playRound
+    takes in playerChoice and computerChoice
+    compares the two and determines who wins
+    uses a helper function compareChoices that compares the choices and returns who won
+    returns who has won as a string (or number that can be looked up in a dictionary - object)
+
+Function game
+    is called to begin the game
+    calls playRound each time a round is played
+    in this iteration will play a best out of 5 game
+    game will keep track of the computer and players score using two counters.
+    will return a string on who won (in the future), for now will output results to console.log
+
+Helper Functions:
+Function compareChoices
+    takes in both the computer and players choice and
+    return who won. Uses a dictionary or switch statement to check the choices.
+
+Function playerChoice
+    requests a prompt from the user
+    converts input to capitalized version to so it can be used properly by compareChoices
+    returns the players choice
+
