@@ -1,11 +1,3 @@
-/*Function getComputerChoice
-    acts as the computers choice
-    uses a random number generator to randomly return a number
-    this number will correlate to either Rock, Paper, or Scissors
-    then returns computerChoice
-*/
-
-
 /**
  * Returns the computerChoice for Rock, Paper, Scissors.
  */
