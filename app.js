@@ -33,27 +33,34 @@ function getRockPaperScissor (num){
     }
 }
 
-// /**
-//  * Returns the either Rock, Paper, or Scissors based on user input
-//  */
-// function getPlayerChoice(){
-//     let playerChoice = "";
-//     let noChoice = True;
+/**
+ * Returns the either Rock, Paper, or Scissors based on user input
+ */
+function getPlayerChoice(){
+    let playerChoice = "";
+    let noChoice = True;
     
-//     while (noChoice){
-//         playerChoice = prompt("Please enter Rock, Paper, or Scissor", "Error");
-//         playerChoice = playerChoice.slice(0,1)
+    while (noChoice){
+        playerChoice = prompt("Please enter Rock, Paper, or Scissor", "");
+        playerChoice = capitalizeStr(playerChoice);
         
-//         switch(num){
+        switch(playerChoice){
+            case "Rock":
+                return "Rock";
+            case "Paper":
+                return "Paper";
+            case "Scissor":
+                return "Scissor";
+        }
+        alert("Incorrect value entered, please try again!");
+    }
 
-//         }
-//     }
-
-// }
+}
 
 /**
  * Returns capitalized version of string.
  * 
+ * works with empty strings too!
  * @param {*} str 
  * @returns capitalized version of str
  */
