@@ -15,10 +15,12 @@ function getComputerChoice(){
 }
 
 
+//Helper Functions
+
 /** 
- * Returns string that is 'Rock', 'Paper', or 'Scissors'
+ * Returns string that is 'Rock', 'Paper', or 'Scissor'
  * 
- * @param {number} num : numerical rep. of Rock, Paper, or Scissors
+ * @param {number} num : numerical rep. of Rock, Paper, or Scissor
  */
 function getRockPaperScissor (num){
     switch(num){
@@ -27,6 +29,36 @@ function getRockPaperScissor (num){
         case 2:
             return "Paper";
         case 3:
-            return "Scissors";
+            return "Scissor";
     }
+}
+
+// /**
+//  * Returns the either Rock, Paper, or Scissors based on user input
+//  */
+// function getPlayerChoice(){
+//     let playerChoice = "";
+//     let noChoice = True;
+    
+//     while (noChoice){
+//         playerChoice = prompt("Please enter Rock, Paper, or Scissor", "Error");
+//         playerChoice = playerChoice.slice(0,1)
+        
+//         switch(num){
+
+//         }
+//     }
+
+// }
+
+/**
+ * Returns capitalized version of string.
+ * 
+ * @param {*} str 
+ * @returns capitalized version of str
+ */
+
+function capitalizeStr(str) {
+    let len = str.length;
+    return str.slice(0,1).toUpperCase() + str.slice(1,len).toLowerCase();
 }

@@ -24,7 +24,7 @@ Function compareChoices
     takes in both the computer and players choice and
     return who won. Uses a dictionary or switch statement to check the choices.
 
-Function playerChoice
+Function getPlayerChoice
     requests a prompt from the user
     converts input to capitalized version to so it can be used properly by compareChoices
     returns the players choice
