@@ -29,3 +29,10 @@ Function playerChoice
     converts input to capitalized version to so it can be used properly by compareChoices
     returns the players choice
 
+Function getRockPaperScissor
+    takes in an integer number between 1 and 3 (inclusive)
+    returns either "Rock", "Paper", or "Scissor" based on value of number
+
+Function getNumFromString
+    takes in a string being "Rock", "Paper", or "Scissors"
+    returns the number value equivalent to it. 
