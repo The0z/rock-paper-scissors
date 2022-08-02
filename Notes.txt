@@ -1,5 +1,5 @@
 Main Functions:
-Function getComputerChoice
+Function getComputerChoice //down
     acts as the computers choice
     uses a random number generator to randomly return a number
     this number will correlate to either Rock, Paper, or Scissors
@@ -23,6 +23,8 @@ Helper Functions:
 Function compareChoices
     takes in both the computer and players choice and
     return who won. Uses a dictionary or switch statement to check the choices.
+    honestly a 2D array with who won would probably be the cleanest here (fastest too)
+    Slow method would be doing switch cases for all the cases 
 
 Function getPlayerChoice
     requests a prompt from the user
