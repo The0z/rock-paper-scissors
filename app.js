@@ -6,8 +6,49 @@ function getComputerChoice(){
     return getRockPaperScissor(randNum);
 }
 
+/**
+ * Returns 0 if the computer won and 1 if the player won
+ *  
+ * @param {string} computerChoice
+ * @param {string} playerChoice
+ * @returns {number} result
+ */
+function playRound(computerChoice, playerChoice){
 
-//Helper Functions
+}
+
+
+//Helper Functions and Values
+
+/**
+ * Returns if player lose (0), tie (1) or win (2).
+ * Player choice is row, Computer Choice is Column, inner object values are results
+ * of the player choice versus computer choice
+*/
+const RocPapScisMatrix = {
+    rock:{
+        rock: 1,
+        paper: 0,
+        scissor: 2,
+    },
+    paper:{
+        rock: 2,
+        paper: 1,
+        scissor: 0 
+    },
+    scissor:{
+        rock: 0,
+        paper: 2,
+        scissor: 1
+    }
+}
+
+/**
+ * Returns
+ * 
+ * 
+ */
+
 
 /** 
  * Returns string that is 'Rock', 'Paper', or 'Scissor'
