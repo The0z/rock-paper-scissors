@@ -1,3 +1,6 @@
+//Functional Rock Paper Scissors, BUT incorrectly follows some Odin
+//Steps. Try Again...
+
 /**
  * Returns the computerChoice for Rock, Paper, Scissors.
  */
