@@ -7,7 +7,7 @@ Function getComputerChoice //down
 
 
 Function playRound
-    takes in playerChoice and computerChoice
+    calls getPlayerChoice and getsComputerChoice
     compares the two and determines who wins
     uses a helper function compareChoices that compares the choices and returns who won
     returns who has won as a string (or number that can be looked up in a dictionary - object)
@@ -16,15 +16,12 @@ Function game
     is called to begin the game
     calls playRound each time a round is played
     in this iteration will play a best out of 5 game
+    iteration must keep track of best out of 5, therefore if the computer or players score is
+    equal to 3 end the game and announce who won. While loop is better here. 
     game will keep track of the computer and players score using two counters.
     will return a string on who won (in the future), for now will output results to console.log
 
 Helper Functions:
-Function compareChoices
-    takes in both the computer and players choice and
-    return who won. Uses a dictionary or switch statement to check the choices.
-    honestly a 2D array with who won would probably be the cleanest here (fastest too)
-    Slow method would be doing switch cases for all the cases 
 
 Function getPlayerChoice
     requests a prompt from the user
