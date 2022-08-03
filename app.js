@@ -37,7 +37,7 @@ function game(){
         switch(roundRes){
             case 0:
                 console.log("Computer Wins the Round")
-                computerScore
+                computerScore++;
                 break;
             case 1:
                 console.log("It's a Tie!")
