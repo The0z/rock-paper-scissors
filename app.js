@@ -10,10 +10,11 @@ function getComputerChoice(){
 }
 
 /**
- * Returns 0 if the computer won and 1 if the player won
+ * Plays a round of Rock Paper Scissors 
  * 
- *
- * @returns {number} result
+ * @param {string} playerSelection (Rock, Paper, or Scissors) 
+ * @param {string} computerSelection (Rock, Paper, or Scissors)
+ * @returns {string} result of the rock paper scissor round
  */
 function playRound(playerSelection, computerSelection){
     let playerResult = RocPapSciMatrix[playerSelection.toLowerCase()][computerSelection.toLowerCase()];
@@ -69,7 +70,7 @@ function game(){
 //Helper Functions and Values
 
 /**
- * Returns if player lose (0), tie (1) or win (2).
+ * Returns if player lose , tie  or win.
  * Player choice is row, Computer Choice is Column, inner object values are results
  * of the player choice versus computer choice
 */
