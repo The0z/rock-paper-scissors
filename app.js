@@ -77,17 +77,17 @@ const RocPapSciMatrix = {
     rock:{
         rock: 'lose',
         paper: 'tie',
-        scissor: 'win',
+        scissors: 'win',
     },
     paper:{
         rock: 'win',
         paper: 'tie',
-        scissor: 'lose' 
+        scissors: 'lose' 
     },
-    scissor:{
+    scissors:{
         rock: 'lose',
         paper: 'win',
-        scissor: 'tie'
+        scissors: 'tie'
     }
 };
 
