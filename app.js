@@ -15,6 +15,7 @@ function getComputerChoice(){
 function playRound(){
     let playerChoice = getPlayerChoice();
     let computerChoice = getComputerChoice();
+    console.log('Player Choice is :', playerChoice, "Computer Choice is:", computerChoice);
     return RocPapScisMatrix[playerChoice.toLowerCase()][computerChoice.toLowerCase()];
 }
 
@@ -35,7 +36,7 @@ function game(){
         switch(roundRes){
             case 0:
                 console.log("Computer Wins the Round")
-                computerScore++;
+                computerScore
                 break;
             case 1:
                 console.log("It's a Tie!")
