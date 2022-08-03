@@ -1,9 +1,18 @@
+v2: Update Functions to meet Odin Project Requirements more Closely
+
 Main Functions:
-Function getComputerChoice //down
-    acts as the computers choice
-    uses a random number generator to randomly return a number
-    this number will correlate to either Rock, Paper, or Scissors
-    then returns computerChoice
+Function getComputerChoice
+    -Returns the computersChoice in String form of Rock, Paper, or Scissors.
+    -Uses a random number generator to create a integer number of 1,2, or 3.
+    -Number will be used with a helper function to convert number to Rock,
+    Paper, or Scissors.
+    -v2: Minor update of text 'Scissor' to 'Scissors' and update helper getRockPaperScissors
+    function.
+
+Helper Function getRockPaperScissors
+    -Takes in an integer number between 1 and 3 (inclusive)
+    -Returns either "Rock", "Paper", or "Scissors" based on value of number
+    -v2: update 'Scissor' to 'Scissor' and change function name.
 
 
 Function playRound
@@ -28,9 +37,6 @@ Function getPlayerChoice
     converts input to capitalized version to so it can be used properly by compareChoices
     returns the players choice
 
-Function getRockPaperScissor
-    takes in an integer number between 1 and 3 (inclusive)
-    returns either "Rock", "Paper", or "Scissor" based on value of number
 
 Function getNumFromString
     takes in a string being "Rock", "Paper", or "Scissors"
