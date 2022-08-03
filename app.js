@@ -75,8 +75,8 @@ function game(){
 */
 const RocPapSciMatrix = {
     rock:{
-        rock: 'lose',
-        paper: 'tie',
+        rock: 'tie',
+        paper: 'lose',
         scissors: 'win',
     },
     paper:{
