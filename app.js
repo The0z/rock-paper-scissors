@@ -11,16 +11,20 @@ function getComputerChoice(){
 
 /**
  * Returns 0 if the computer won and 1 if the player won
- * 0 = player loss, 1 = player tie, 2 = player wins.
+ * 
  *
  * @returns {number} result
  */
-function playRound(){
-    let playerChoice = getPlayerChoice();
-    let computerChoice = getComputerChoice();
-    console.log('Player Choice is :', playerChoice); 
-    console.log("Computer Choice is:", computerChoice);
-    return RocPapScisMatrix[playerChoice.toLowerCase()][computerChoice.toLowerCase()];
+function playRound(playerSelection, computerSelection){
+    let playerResult = RocPapSciMatrix[playerSelection.toLowerCase()][computerSelection.toLowerCase()];
+    switch(playerResult){
+        case 'win':
+            return "You Win! " + playerSelection + " beats " + computerSelection;
+        case 'tie':
+            return "Tie! " + playerSelection + " ties " + computerSelection;
+        case 'lose':
+            return "You Lose! " + playerSelection + " loses to " + computerSelection;
+    }
 }
 
 /**
@@ -69,21 +73,21 @@ function game(){
  * Player choice is row, Computer Choice is Column, inner object values are results
  * of the player choice versus computer choice
 */
-const RocPapScisMatrix = {
+const RocPapSciMatrix = {
     rock:{
-        rock: 1,
-        paper: 0,
-        scissor: 2,
+        rock: 'lose',
+        paper: 'tie',
+        scissor: 'win',
     },
     paper:{
-        rock: 2,
-        paper: 1,
-        scissor: 0 
+        rock: 'win',
+        paper: 'tie',
+        scissor: 'lose' 
     },
     scissor:{
-        rock: 0,
-        paper: 2,
-        scissor: 1
+        rock: 'lose',
+        paper: 'win',
+        scissor: 'tie'
     }
 };
 

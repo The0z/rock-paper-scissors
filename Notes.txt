@@ -16,10 +16,12 @@ Helper Function getRockPaperScissors
 
 
 Function playRound
-    calls getPlayerChoice and getsComputerChoice
-    compares the two and determines who wins
-    uses a helper function compareChoices that compares the choices and returns who won
-    returns who has won as a string (or number that can be looked up in a dictionary - object)
+    -takes in two parameters: playerSelection, and computerSelection.
+    -returns a string that declares the winner of the round.
+    -uses helper object called RocPapSciMatrix 
+    -helper function returns win, tie or lose based if player win,tie, or lose.
+    -use a switch function to return the appropriate string to the player.
+    -v2: update. Complete redo to meet odin standards.
 
 Function game
     is called to begin the game
