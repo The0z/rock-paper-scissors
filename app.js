@@ -8,15 +8,54 @@ function getComputerChoice(){
 
 /**
  * Returns 0 if the computer won and 1 if the player won
- *  
- * @param {string} computerChoice
- * @param {string} playerChoice
+ * 0 = player loss, 1 = player tie, 2 = player wins.
+ *
  * @returns {number} result
  */
-function playRound(computerChoice, playerChoice){
-
+function playRound(){
+    let playerChoice = getPlayerChoice();
+    let computerChoice = getComputerChoice();
+    return RocPapScisMatrix[playerChoice.toLowerCase()][computerChoice.toLowerCase()];
 }
 
+/**
+ * Plays the game of Rock Paper Scissors 
+ * Reports who won each round and finally outputs the end of the game
+ * Initially will only use console.log
+ * 
+ */
+function game(){
+    let playGame = true;
+    let playerScore = 0;
+    let computerScore = 0;
+
+    //assuming game is best of 5, where tie extends the game.
+    while(playGame){
+        let roundRes = playRound();
+        switch(roundRes){
+            case 0:
+                console.log("Computer Wins the Round")
+                computerScore++;
+                break;
+            case 1:
+                console.log("It's a Tie!")
+                break;
+            case 2: 
+                console.log("Player Wins the Round!")
+                playerScore++;
+                break;
+        }
+        if (computerScore === 3 ){
+            console.log("The Computer has won the Game! Whahahahaha")
+            return;
+
+        } else if (playerScore === 3){
+            console.log("You, the Player has won the Game!")
+            return;
+        }
+
+    }
+}
 
 //Helper Functions and Values
 
@@ -41,14 +80,7 @@ const RocPapScisMatrix = {
         paper: 2,
         scissor: 1
     }
-}
-
-/**
- * Returns
- * 
- * 
- */
-
+};
 
 /** 
  * Returns string that is 'Rock', 'Paper', or 'Scissor'
