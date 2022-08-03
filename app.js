@@ -15,7 +15,8 @@ function getComputerChoice(){
 function playRound(){
     let playerChoice = getPlayerChoice();
     let computerChoice = getComputerChoice();
-    console.log('Player Choice is :', playerChoice, "Computer Choice is:", computerChoice);
+    console.log('Player Choice is :', playerChoice); 
+    console.log("Computer Choice is:", computerChoice);
     return RocPapScisMatrix[playerChoice.toLowerCase()][computerChoice.toLowerCase()];
 }
 
