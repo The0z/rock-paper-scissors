@@ -60,8 +60,8 @@ function game(){
         playGame = endGame(playerScore, computerScore);
     }
     console.log(playerScore > computerScore ? 
-        `The Player wins! Final Score: ${playerScore} to ${computerScore}`
-        : `The Computer wins! Final Score: ${computerScore} to ${playerScore}`);
+        `The Player wins! Final Score: ${playerScore} to ${computerScore}` : 
+        `The Computer wins! Final Score: ${computerScore} to ${playerScore}`);
 }
 
 //Helper Functions and Values
@@ -74,7 +74,7 @@ function game(){
  * @params {number} computerScore
  * @return {boolean} playGame
  */
-endGame(playerScore, computerScore){
+function endGame(playerScore, computerScore){
     if (computerScore === 3 || playerScore == 3){
         return false;
     }
