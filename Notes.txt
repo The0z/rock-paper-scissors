@@ -24,13 +24,10 @@ Function playRound
     -v2: update. Complete redo to meet odin standards.
 
 Function game
-    is called to begin the game
-    calls playRound each time a round is played
-    in this iteration will play a best out of 5 game
-    iteration must keep track of best out of 5, therefore if the computer or players score is
-    equal to 3 end the game and announce who won. While loop is better here. 
-    game will keep track of the computer and players score using two counters.
-    will return a string on who won (in the future), for now will output results to console.log
+    -calls playRound inside.
+    -Plays 5 rounds total (while or for loop) - I am assuming tied rounds extend game. 
+        - I.e. 6 rounds due to ties.
+    -Needs to also call getComputerChoice and getPlayerChoice so that playRound can function.
 
 Helper Functions:
 
