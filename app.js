@@ -41,33 +41,47 @@ function game(){
 
     //assuming game is best of 5, where tie extends the game.
     while(playGame){
-        let roundRes = playRound();
-        switch(roundRes){
-            case 0:
-                console.log("Computer Wins the Round")
-                computerScore++;
-                break;
-            case 1:
-                console.log("It's a Tie!")
-                break;
-            case 2: 
-                console.log("Player Wins the Round!")
+        let computerSelection = getComputerChoice();
+        let playerSelection = getPlayerChoice();
+        console.log(playRound(playerSelection, computerSelection)); //console.log for now
+
+        let playerResult = RocPapSciMatrix[playerSelection][computerSelection];
+
+        switch (playerResult){
+            case 'win':
                 playerScore++;
                 break;
+            case 'lose':
+                computerScore++;
+                break;
+            default:
+                break;
         }
-        if (computerScore === 3 ){
-            console.log("The Computer has won the Game! Whahahahaha")
-            return;
-
-        } else if (playerScore === 3){
-            console.log("You, the Player has won the Game!")
-            return;
-        }
-
+        playGame = endGame(playerScore, computerScore);
     }
+    console.log(playerScore > computerScore ? 
+        `The Player wins! Final Score: ${playerScore} to ${computerScore}`
+        : `The Computer wins! Final Score: ${computerScore} to ${playerScore}`);
 }
 
 //Helper Functions and Values
+
+/**
+ * Checks if computer or player has won the game.
+ * if someone has won returns false, else returns true.
+ * 
+ * @params {number} playerScore
+ * @params {number} computerScore
+ * @return {boolean} playGame
+ */
+endGame(playerScore, computerScore){
+    if (computerScore === 3 || playerScore == 3){
+        return false;
+    }
+    return true;
+
+}
+
 
 /**
  * Returns if player lose , tie  or win.
