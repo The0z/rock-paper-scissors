@@ -45,7 +45,7 @@ function game(){
         let playerSelection = getPlayerChoice();
         console.log(playRound(playerSelection, computerSelection)); //console.log for now
 
-        let playerResult = RocPapSciMatrix[playerSelection][computerSelection];
+        let playerResult = RocPapSciMatrix[playerSelection.toLowerCase()][computerSelection.toLowerCase()];
 
         switch (playerResult){
             case 'win':
@@ -130,7 +130,7 @@ function getPlayerChoice(){
     let noChoice = true;
     
     while (noChoice){
-        playerChoice = prompt("Please enter Rock, Paper, or Scissor", "");
+        playerChoice = prompt("Please enter Rock, Paper, or Scissors", "");
         playerChoice = capitalizeStr(playerChoice);
         
         switch(playerChoice){
@@ -138,8 +138,8 @@ function getPlayerChoice(){
                 return "Rock";
             case "Paper":
                 return "Paper";
-            case "Scissor":
-                return "Scissor";
+            case "Scissors":
+                return "Scissors";
         }
         alert("Incorrect value entered, please try again!");
     }
