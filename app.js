@@ -13,18 +13,21 @@ function getComputerChoice(){
  * Plays a round of Rock Paper Scissors 
  * 
  * @param {string} playerSelection (Rock, Paper, or Scissors) 
- * @param {string} computerSelection (Rock, Paper, or Scissors)
  * @returns {string} result of the rock paper scissor round
  */
-function playRound(playerSelection, computerSelection){
-    let playerResult = RocPapSciMatrix[playerSelection.toLowerCase()][computerSelection.toLowerCase()];
+function playRound(playerChoice){
+    let computerChoice = getComputerChoice();
+    let playerResult = RocPapSciMatrix[playerChoice][computerChoice];
     switch(playerResult){
         case 'win':
-            return "You Win! " + playerSelection + " beats " + computerSelection;
+            console.log(`You Win! ${playerChoice} beats ${computerChoice}`);
+            return;
         case 'tie':
-            return "Tie! " + playerSelection + " ties " + computerSelection;
+            console.log(`Tie! ${playerChoice} ties ${computerChoice}`);
+            return;
         case 'lose':
-            return "You Lose! " + playerSelection + " loses to " + computerSelection;
+            console.log(`You Lose! ${playerChoice} loses to ${computerChoice}`);
+            return;
     }
 }
 
@@ -107,43 +110,19 @@ const RocPapSciMatrix = {
 };
 
 /** 
- * Returns string that is 'Rock', 'Paper', or 'Scissor'
+ * Returns string that is 'rock', 'paper', or 'scissor'
  * 
  * @param {number} num : numerical rep. of Rock, Paper, or Scissor
  */
 function getRockPaperScissors (num){
     switch(num){
         case 1:
-            return "Rock";
+            return "rock";
         case 2:
-            return "Paper";
+            return "paper";
         case 3:
-            return "Scissors";
+            return "scissors";
     }
-}
-
-/**
- * Returns the either Rock, Paper, or Scissors based on user input
- */
-function getPlayerChoice(){
-    let playerChoice = "";
-    let noChoice = true;
-    
-    while (noChoice){
-        playerChoice = prompt("Please enter Rock, Paper, or Scissors", "");
-        playerChoice = capitalizeStr(playerChoice);
-        
-        switch(playerChoice){
-            case "Rock":
-                return "Rock";
-            case "Paper":
-                return "Paper";
-            case "Scissors":
-                return "Scissors";
-        }
-        alert("Incorrect value entered, please try again!");
-    }
-
 }
 
 /**
@@ -158,3 +137,20 @@ function capitalizeStr(str) {
     let len = str.length;
     return str.slice(0,1).toUpperCase() + str.slice(1,len).toLowerCase();
 }
+
+const buttons = document.querySelectorAll('button');
+
+//Checks the buttons that are clicked. If they are rock paper or scissor buttons
+//the will call playRound using either rock paper or scissors based on what button
+//was pressed.
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        if (button.id === 'rockBtn'){
+            playRound('rock');
+        } else if (button.id === 'paperBtn'){
+            playRound('paper');
+        } else if (button.id === 'scissorBtn'){
+            playRound('scissors');
+        }
+    });
+});
