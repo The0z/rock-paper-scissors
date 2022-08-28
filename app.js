@@ -1,5 +1,12 @@
-//Functional Rock Paper Scissors, BUT incorrectly follows some Odin
-//Steps. Try Again...
+//Rock Paper Scissors with UI!
+
+//GLOBAL VARIABLES:
+let playerChoice = '';
+let computerChoice = '';
+let playerPts = 0;
+let cpuPts = 0;
+
+
 
 /**
  * Returns the computerChoice for Rock, Paper, Scissors.
@@ -12,7 +19,7 @@ function getComputerChoice(){
 /**
  * Plays a round of Rock Paper Scissors 
  * 
- * @param {string} playerSelection (Rock, Paper, or Scissors) 
+ * @param {string} playerSelection (rock, paper, or scissors) 
  * @returns {string} result of the rock paper scissor round
  */
 function playRound(playerChoice){
@@ -20,51 +27,33 @@ function playRound(playerChoice){
     let playerResult = RocPapSciMatrix[playerChoice][computerChoice];
     switch(playerResult){
         case 'win':
+            playerPts++;
             console.log(`You Win! ${playerChoice} beats ${computerChoice}`);
-            return;
+            break;
         case 'tie':
             console.log(`Tie! ${playerChoice} ties ${computerChoice}`);
-            return;
+            break;
         case 'lose':
+            cpuPts++;
             console.log(`You Lose! ${playerChoice} loses to ${computerChoice}`);
-            return;
+            break;
     }
+    gameStatus();
 }
 
 /**
- * Plays the game of Rock Paper Scissors 
- * Reports who won each round and finally outputs the end of the game
- * Initially will only use console.log
- * 
+ * Checks if the computer or player has reached enough points to win the game
+ * Calls end game if either the player or cpu wins.
  */
-function game(){
-    let playGame = true;
-    let playerScore = 0;
-    let computerScore = 0;
-
-    //assuming game is best of 5, where tie extends the game.
-    while(playGame){
-        let computerSelection = getComputerChoice();
-        let playerSelection = getPlayerChoice();
-        console.log(playRound(playerSelection, computerSelection)); //console.log for now
-
-        let playerResult = RocPapSciMatrix[playerSelection.toLowerCase()][computerSelection.toLowerCase()];
-
-        switch (playerResult){
-            case 'win':
-                playerScore++;
-                break;
-            case 'lose':
-                computerScore++;
-                break;
-            default:
-                break;
-        }
-        playGame = endGame(playerScore, computerScore);
+function gameStatus(){
+    if (playerPts >= 3){
+        console.log("Player Wins")
+        endGame();
+    } else if (cpuPts >= 3){
+        console.log("CPU Wins");
+        endGame();
     }
-    console.log(playerScore > computerScore ? 
-        `The Player wins! Final Score: ${playerScore} to ${computerScore}` : 
-        `The Computer wins! Final Score: ${computerScore} to ${playerScore}`);
+ 
 }
 
 //Helper Functions and Values
@@ -77,12 +66,8 @@ function game(){
  * @params {number} computerScore
  * @return {boolean} playGame
  */
-function endGame(playerScore, computerScore){
-    if (computerScore === 3 || playerScore == 3){
-        return false;
-    }
-    return true;
-
+function endGame(){
+    gameBtn.style.display='flex';
 }
 
 
@@ -133,24 +118,57 @@ function getRockPaperScissors (num){
  * @returns capitalized version of str
  */
 
-function capitalizeStr(str) {
+ function CapFirstLetterStr(str) {
     let len = str.length;
     return str.slice(0,1).toUpperCase() + str.slice(1,len).toLowerCase();
 }
 
-const buttons = document.querySelectorAll('button');
+//EVENT LISTENERS:
+
+
+const choiceBtns = document.querySelectorAll('.choiceBtns');
+const gameBtn = document.querySelector('#gameBtn');
 
 //Checks the buttons that are clicked. If they are rock paper or scissor buttons
 //the will call playRound using either rock paper or scissors based on what button
-//was pressed.
-buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-        if (button.id === 'rockBtn'){
+//was pressed
+
+const divChoice = document.querySelector('#choiceContainer');
+
+//Creates rock, paper, scissor, buttons then sets itself to invisible.
+gameBtn.addEventListener('click', () => {
+    //gameBtn.style.display = 'none';
+    
+    const rockBtn = document.createElement('button');
+    rockBtn.setAttribute("id", 'rockBtn');
+    rockBtn.textContent = "ROCK";
+    
+    const paperBtn = document.createElement('button');
+    paperBtn.setAttribute("id", 'paperBtn');
+    paperBtn.textContent = "PAPER";
+
+    const scissorBtn = document.createElement('button');
+    scissorBtn.setAttribute("id", 'scissorBtn');
+    scissorBtn.textContent = "SCISSORS";
+
+    divChoice.appendChild(rockBtn);
+    divChoice.appendChild(paperBtn);
+    divChoice.appendChild(scissorBtn);
+
+});
+
+// Listen to any clicks on div then use bubbling to determine which btn
+// Required otherwise dynamically created buttons will not attach listener to
+divChoice.addEventListener('click', function(e){
+    if(e.target){
+        if(e.target.id === 'rockBtn'){
             playRound('rock');
-        } else if (button.id === 'paperBtn'){
+        } else if (e.target.id === 'paperBtn'){
             playRound('paper');
-        } else if (button.id === 'scissorBtn'){
+        } else if (e.target.id === 'scissorBtn'){
             playRound('scissors');
         }
-    });
-});
+    
+    }
+})
+
