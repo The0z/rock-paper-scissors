@@ -136,7 +136,8 @@ const divChoice = document.querySelector('#choiceContainer');
 //Creates rock, paper, scissor, buttons then sets itself to invisible.
 gameBtn.addEventListener('click', () => {
     gameBtn.style.display = 'none';
-    
+    roundResP.textContent = '';
+
     const rockBtn = document.createElement('button');
     rockBtn.setAttribute("id", 'rockBtn');
     rockBtn.textContent = "ROCK";
