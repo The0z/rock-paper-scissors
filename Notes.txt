@@ -6,35 +6,26 @@ Function getComputerChoice
     -Uses a random number generator to create a integer number of 1,2, or 3.
     -Number will be used with a helper function to convert number to Rock,
     Paper, or Scissors.
-    -v2: Minor update of text 'Scissor' to 'Scissors' and update helper getRockPaperScissors
-    function.
 
 Helper Function getRockPaperScissors
     -Takes in an integer number between 1 and 3 (inclusive)
-    -Returns either "Rock", "Paper", or "Scissors" based on value of number
-    -v2: update 'Scissor' to 'Scissors' and change function name.
+    -Returns either "rock", "paper", or "scissors" based on value of number
+
 
 
 Function playRound
-    -takes in two parameters: playerSelection, and computerSelection.
-    -returns a string that declares the winner of the round.
-    -uses helper object called RocPapSciMatrix 
-    -helper function returns win, tie or lose based if player win,tie, or lose.
-    -use a switch function to return the appropriate string to the player.
-    -v2: update. Complete redo to meet odin standards.
+    -takes in playerChoice
+    -outputs if player or computer won the round
+    -increments player or computer points depending on who won.
 
-Function game
-    -calls playRound inside.
-    -Plays 5 rounds total (while or for loop) - I am assuming tied rounds extend game. 
-        - I.e. 6 rounds due to ties.
-    -Needs to also call getComputerChoice and getPlayerChoice so that playRound can function.
-    -How can it tell who won and how to move the score? 
-        - use the RocPapSciMatrix that we already have!!!
-        -set this up with a switch of win, tie, and lose.
+Function gameStatus
+    -checks to see if the player or computer has won the game.
 
-Helper Functions:
+
 Function endGame
-    -will return false if player or computer hasn't won 3 out of 5 games.
-    -will return true if player or computer has won.
+    -deletes the dynamically created buttons and makes the play game button visible.
 
+Button Event Listeners:
+- rock, paper, and scissor btns: 
+- gameBtn: starts the game() function and disables (disappears in the future)
 
