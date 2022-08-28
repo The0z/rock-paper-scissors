@@ -25,19 +25,20 @@ function getComputerChoice(){
 function playRound(playerChoice){
     let computerChoice = getComputerChoice();
     let playerResult = RocPapSciMatrix[playerChoice][computerChoice];
-    const roundResP = document.querySelector('#roundResP');
+    computerChoice = CapFirstLetterStr(computerChoice);
+    playerChoice = CapFirstLetterStr(playerChoice);
 
     switch(playerResult){
         case 'win':
             playerPts++;
-            roundResP.textContent=`You Win! ${playerChoice} beats ${computerChoice}`;
+            roundResP.textContent=`Round Won: ${playerChoice} beats ${computerChoice}`;
             break;
         case 'tie':
-            roundResP.textContent=`Tie! ${playerChoice} ties ${computerChoice}`;
+            roundResP.textContent=`Round Tied: ${playerChoice} ties ${computerChoice}`;
             break;
         case 'lose':
             cpuPts++;
-            roundResP.textContent=`You Lose! ${playerChoice} loses to ${computerChoice}`;
+            roundResP.textContent=`Round Loss: ${playerChoice} loses to ${computerChoice}`;
             break;
     }
     updateScore();
@@ -47,13 +48,14 @@ function playRound(playerChoice){
 /**
  * Checks if the computer or player has reached enough points to win the game
  * Calls end game if either the player or cpu wins.
+ * Updates roundResP to tell the player who won the game
  */
 function gameStatus(){
     if (playerPts >= 3){
-        console.log("Player Wins")
+        roundResP.textContent = "THE PLAYER HAS DEFEATED DOCTOR ROBOTNIK";
         endGame();
     } else if (cpuPts >= 3){
-        console.log("CPU Wins");
+        roundResP.textContent = "DOCTOR ROBOTNIK HAS TAKEN OVER!"
         endGame();
     }
  
@@ -123,6 +125,7 @@ function getRockPaperScissors (num){
 
 const choiceBtns = document.querySelectorAll('.choiceBtns');
 const gameBtn = document.querySelector('#gameBtn');
+const roundResP = document.querySelector('#roundResP');
 
 //Checks the buttons that are clicked. If they are rock paper or scissor buttons
 //the will call playRound using either rock paper or scissors based on what button
