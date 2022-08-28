@@ -25,19 +25,22 @@ function getComputerChoice(){
 function playRound(playerChoice){
     let computerChoice = getComputerChoice();
     let playerResult = RocPapSciMatrix[playerChoice][computerChoice];
+    const roundResP = document.querySelector('#roundResP');
+
     switch(playerResult){
         case 'win':
             playerPts++;
-            console.log(`You Win! ${playerChoice} beats ${computerChoice}`);
+            roundResP.textContent=`You Win! ${playerChoice} beats ${computerChoice}`;
             break;
         case 'tie':
-            console.log(`Tie! ${playerChoice} ties ${computerChoice}`);
+            roundResP.textContent=`Tie! ${playerChoice} ties ${computerChoice}`;
             break;
         case 'lose':
             cpuPts++;
-            console.log(`You Lose! ${playerChoice} loses to ${computerChoice}`);
+            roundResP.textContent=`You Lose! ${playerChoice} loses to ${computerChoice}`;
             break;
     }
+    updateScore();
     gameStatus();
 }
 
@@ -56,8 +59,10 @@ function gameStatus(){
  
 }
 
-//Helper Functions and Values
-
+function updateScore(){
+    document.querySelector('#scoreP').textContent = `Player has ${playerPts}pts vs 
+        CPU's ${cpuPts}pts`;
+}
 
 
 
