@@ -58,17 +58,7 @@ function gameStatus(){
 
 //Helper Functions and Values
 
-/**
- * Checks if computer or player has won the game.
- * if someone has won returns false, else returns true.
- * 
- * @params {number} playerScore
- * @params {number} computerScore
- * @return {boolean} playGame
- */
-function endGame(){
-    gameBtn.style.display='flex';
-}
+
 
 
 /**
@@ -137,7 +127,7 @@ const divChoice = document.querySelector('#choiceContainer');
 
 //Creates rock, paper, scissor, buttons then sets itself to invisible.
 gameBtn.addEventListener('click', () => {
-    //gameBtn.style.display = 'none';
+    gameBtn.style.display = 'none';
     
     const rockBtn = document.createElement('button');
     rockBtn.setAttribute("id", 'rockBtn');
@@ -172,3 +162,15 @@ divChoice.addEventListener('click', function(e){
     }
 })
 
+/**
+ * Asks the player if they want to play again
+ * 
+ */
+ function endGame(){
+    divChoice.removeChild(rockBtn);
+    divChoice.removeChild(paperBtn);
+    divChoice.removeChild(scissorBtn);
+    playerPts = 0;
+    cpuPts = 0;
+    gameBtn.style.display='flex';
+}
