@@ -9,18 +9,28 @@
     <script src="app.js" defer></script>
 </head>
 <body>
-    <h1>Rock Paper Scissors v2 - Console Edition</h1>
-    <p>Open the console to get started by calling game()</p>
-    <button id='gameBtn'>Do you want to play a game?</button>
-    <div id="choiceContainer">
-        <!-- <button id="rockBtn" class="choiceBtns">ROCK</button>
-        <button id="paperBtn" class="choiceBtns">PAPER</button>
-        <button id="scissorBtn" class="choiceBtns">SCISSOR</button> -->
+    <div id="header">
+        <h1>TAIL SONIC KNUCKLES</h1>
     </div>
-    <div id="resContaier">
-        <p id='roundResP'></p>
-        <p>Current Score Is:</p>
-        <p id="scoreP">Player has 0pts vs CPU's 0pts</p>
+    <div id="content">
+        <div id="introContainer">
+            <p id="introTxt">Dr. Robotnik has challenged you to a 
+                game of Tails, Sonic, and Knuckles! </p>
+            <p> Do You Dare to Face Him?</p>
+            <button id='gameBtn'>YES</button>
+        </div>
+        <div id="choiceContainer">
+        </div>
+        <div id="roundInfoContainer">
+            <p id='roundResP'></p>
+            <p>Current Score Is:</p>
+            <p id="scoreP">Player has 0pts vs CPU's 0pts</p>
+        </div>
+    </div>
+    <div id="footer">
+        <audio id='backMusic' controls loop>
+            <source src="./music/Sonic The Hedgehog  Green Hill Zone.mp3" type="audio/mpeg">
+        </audio>
     </div>
 </body>
 </html>

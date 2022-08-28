@@ -123,16 +123,13 @@ const choiceBtns = document.querySelectorAll('.choiceBtns');
 const gameBtn = document.querySelector('#gameBtn');
 const roundResP = document.querySelector('#roundResP');
 
-//Checks the buttons that are clicked. If they are rock paper or scissor buttons
-//the will call playRound using either rock paper or scissors based on what button
-//was pressed
-
 const divChoice = document.querySelector('#choiceContainer');
 
 //Creates rock, paper, scissor, buttons then sets itself to invisible.
 gameBtn.addEventListener('click', () => {
-    gameBtn.style.display = 'none';
     roundResP.textContent = '';
+    document.querySelector('#backMusic').play();
+    document.querySelector('#introContainer').style.display = 'none';
 
     const rockBtn = document.createElement('button');
     rockBtn.setAttribute("id", 'rockBtn');
@@ -177,5 +174,10 @@ divChoice.addEventListener('click', function(e){
     divChoice.removeChild(scissorBtn);
     playerPts = 0;
     cpuPts = 0;
-    gameBtn.style.display='flex';
+    gameBtn.textContent = "Yes Again!";
+    document.querySelector('#introTxt').textContent = 'Dr. Robotnik has challenged \
+        you to another game of Tails, Sonic, and Knuckles!';
+    document.querySelector('#introContainer').style.display = 'flex';
 }
+
+//Add Music with Event Listener (to Reloop when done)
