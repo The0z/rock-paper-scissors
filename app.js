@@ -6,6 +6,27 @@ let computerChoice = '';
 let playerPts = 0;
 let cpuPts = 0;
 
+//customization fun. Production code would not have this.
+let rock = 'tails';
+let paper = 'sonic';
+let scissors = 'knuckles';
+const RocPapSciMatrix = {
+    tails:{
+        tails: 'tie',
+        sonic: 'lose',
+        knuckles: 'win',
+    },
+    sonic:{
+        tails: 'win',
+        sonic: 'tie',
+        knuckles: 'lose' 
+    },
+    knuckles:{
+        tails: 'lose',
+        sonic: 'win',
+        knuckles: 'tie'
+    }
+};
 
 
 /**
@@ -66,31 +87,6 @@ function updateScore(){
         CPU's ${cpuPts}pts`;
 }
 
-
-
-/**
- * Returns if player lose , tie  or win.
- * Player choice is row, Computer Choice is Column, inner object values are results
- * of the player choice versus computer choice
-*/
-const RocPapSciMatrix = {
-    rock:{
-        rock: 'tie',
-        paper: 'lose',
-        scissors: 'win',
-    },
-    paper:{
-        rock: 'win',
-        paper: 'tie',
-        scissors: 'lose' 
-    },
-    scissors:{
-        rock: 'lose',
-        paper: 'win',
-        scissors: 'tie'
-    }
-};
-
 /** 
  * Returns string that is 'rock', 'paper', or 'scissor'
  * 
@@ -99,11 +95,11 @@ const RocPapSciMatrix = {
 function getRockPaperScissors (num){
     switch(num){
         case 1:
-            return "rock";
+            return rock;
         case 2:
-            return "paper";
+            return paper;
         case 3:
-            return "scissors";
+            return scissors;
     }
 }
 
@@ -140,15 +136,15 @@ gameBtn.addEventListener('click', () => {
 
     const rockBtn = document.createElement('button');
     rockBtn.setAttribute("id", 'rockBtn');
-    rockBtn.textContent = "ROCK";
+    rockBtn.textContent = rock.toUpperCase();
     
     const paperBtn = document.createElement('button');
     paperBtn.setAttribute("id", 'paperBtn');
-    paperBtn.textContent = "PAPER";
+    paperBtn.textContent = paper.toUpperCase();
 
     const scissorBtn = document.createElement('button');
     scissorBtn.setAttribute("id", 'scissorBtn');
-    scissorBtn.textContent = "SCISSORS";
+    scissorBtn.textContent = scissors.toUpperCase();
 
     divChoice.appendChild(rockBtn);
     divChoice.appendChild(paperBtn);
@@ -161,11 +157,11 @@ gameBtn.addEventListener('click', () => {
 divChoice.addEventListener('click', function(e){
     if(e.target){
         if(e.target.id === 'rockBtn'){
-            playRound('rock');
+            playRound(rock);
         } else if (e.target.id === 'paperBtn'){
-            playRound('paper');
+            playRound(paper);
         } else if (e.target.id === 'scissorBtn'){
-            playRound('scissors');
+            playRound(scissors);
         }
     
     }
