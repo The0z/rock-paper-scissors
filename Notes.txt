@@ -1,4 +1,4 @@
-v2: Update Functions to meet Odin Project Requirements more Closely
+v3: Update with CSS. Major Rework
 
 Main Functions:
 Function getComputerChoice
@@ -12,7 +12,7 @@ Function getComputerChoice
 Helper Function getRockPaperScissors
     -Takes in an integer number between 1 and 3 (inclusive)
     -Returns either "Rock", "Paper", or "Scissors" based on value of number
-    -v2: update 'Scissor' to 'Scissor' and change function name.
+    -v2: update 'Scissor' to 'Scissors' and change function name.
 
 
 Function playRound
@@ -38,16 +38,3 @@ Function endGame
     -will return true if player or computer has won.
 
 
-Function getPlayerChoice
-    requests a prompt from the user
-    converts input to capitalized version to so it can be used properly by compareChoices
-    returns the players choice
-
-
-Function getNumFromString
-    takes in a string being "Rock", "Paper", or "Scissors"
-    returns the number value equivalent to it. 
-
-Function capitalizeString
-    takes in a string and returns the capitalized version of it
-    uses slice, toUpperCase, and toLowerCase built-in functions.
