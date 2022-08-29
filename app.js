@@ -196,6 +196,7 @@ divChoice.addEventListener('click', function(e){
     removeChoiceBtns();
     playerPts = 0;
     cpuPts = 0;
+    updateScore(); //reset score incase player plays again.
     document.querySelector('#introTxt').textContent = 'Dr. Robotnik has challenged \
         you to another game of Tails, Sonic, and Knuckles!';
     document.querySelector('#introContainer').style.display = 'flex';
