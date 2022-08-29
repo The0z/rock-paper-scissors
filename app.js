@@ -133,15 +133,18 @@ gameBtn.addEventListener('click', () => {
 
     const rockBtn = document.createElement('button');
     rockBtn.setAttribute("id", 'rockBtn');
+    //rockBtn.innerHTML = '<img class="choiceImg" src="./imgs/TailsLarge.jpg"><img>';
     rockBtn.textContent = rock.toUpperCase();
     
     const paperBtn = document.createElement('button');
     paperBtn.setAttribute("id", 'paperBtn');
-    paperBtn.textContent = paper.toUpperCase();
+    paperBtn.innerHTML = '<img class="choiceImg" src="./imgs/SonicLarge.jpg"><img>';
+    //paperBtn.textContent = paper.toUpperCase();
 
     const scissorBtn = document.createElement('button');
     scissorBtn.setAttribute("id", 'scissorBtn');
-    scissorBtn.textContent = scissors.toUpperCase();
+    scissorBtn.innerHTML = '<img class="choiceImg" src="./imgs/KnucklesLarge.jpg"><img>';
+    //scissorBtn.textContent = scissors.toUpperCase();
 
     divChoice.appendChild(rockBtn);
     divChoice.appendChild(paperBtn);
@@ -174,7 +177,6 @@ divChoice.addEventListener('click', function(e){
     divChoice.removeChild(scissorBtn);
     playerPts = 0;
     cpuPts = 0;
-    gameBtn.textContent = "Yes Again!";
     document.querySelector('#introTxt').textContent = 'Dr. Robotnik has challenged \
         you to another game of Tails, Sonic, and Knuckles!';
     document.querySelector('#introContainer').style.display = 'flex';

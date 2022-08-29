@@ -10,10 +10,43 @@ body {
     text-shadow: -2px -2px 0 #000/* add text outline */
 }
 
+p{
+    margin: 0;
+}
+
+button {
+    margin: 20px;
+    border: 5px solid black;
+    cursor: pointer;
+    border-radius: 35px 35px;
+    padding: 15px;
+}
+
 #roundInfoContainer, #introContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#choiceContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100vw;
+}
+
+#gameBtnImg {
+    width: 200px;
+    height: 200px;
+}
+#gameBtn{
+    background-color: #024BFB;
+    color: white;
+
+    font-size: 20px;
+    font-family: Impact, sans-serif;
+    font-weight: bolder;
+
 }
 
 #hero {
@@ -31,7 +64,7 @@ body {
     flex-grow: 1;
     width: 100vw;
     align-items: center;
-    justify-content: center; /* vertical center */
+    justify-content: space-evenly;
     background-image: url("./imgs/greenhills.jpg");
     background-position: center center;
     background-repeat: no-repeat;
@@ -47,4 +80,15 @@ body {
     justify-content: center;
     padding: 10px 10px;
     box-sizing: border-box;
+}
+
+#rockBtn, #paperBtn, #scissorBtn {
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+}
+
+.choiceImg {
+    width: 150px;
+    height: 150px;
 }
