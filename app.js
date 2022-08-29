@@ -73,6 +73,7 @@ function playRound(playerChoice){
  * Checks if the computer or player has reached enough points to win the game
  * Calls end game if either the player or cpu wins.
  * Updates roundResP to tell the player who won the game
+ * Plays music based on gameStatus (future iterations should separate these!)
  */
 function gameStatus(){
     scoreP.classList.add("playing");
@@ -198,6 +199,7 @@ divChoice.addEventListener('click', function(e){
         you to another game of Tails, Sonic, and Knuckles!';
     document.querySelector('#introContainer').style.display = 'flex';
     document.querySelector('#roundInfoContainer').style.display = 'none';
+    document.querySelector('#scoreP').classList.remove('playing'); //Fixes scoreP transition bug.
 }
 
 //TRANSITIONS
@@ -207,5 +209,5 @@ function removeTransition(e) {
     
 }
 
-const buttonPresses = document.querySelectorAll('p');
+const buttonPresses = document.querySelectorAll('.transitionP');
 buttonPresses.forEach(buttonPress => buttonPress.addEventListener('transitionend', removeTransition));
