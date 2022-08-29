@@ -193,17 +193,25 @@ divChoice.addEventListener('click', function(e){
  * 
  */
  function endGame(){
-    removeChoiceBtns();
-    playerPts = 0;
-    cpuPts = 0;
-    updateScore(); //reset score incase player plays again.
+    resetAll();
     document.querySelector('#introTxt').textContent = 'Dr. Robotnik has challenged \
         you to another game of Tails, Sonic, and Knuckles!';
     document.querySelector('#introContainer').style.display = 'flex';
     document.querySelector('#roundInfoContainer').style.display = 'none';
-    document.querySelector('#scoreP').classList.remove('playing'); //Fixes scoreP transition bug.
+    
 }
 
+//Resets all values when game end. Fixes transition bugs.
+function resetAll(){
+    removeChoiceBtns();
+    playerPts = 0;
+    cpuPts = 0;
+    updateScore(); //reset score incase player plays again.
+    document.querySelector('#scoreP').classList.remove('playing'); //Fixes scoreP transition bug.
+    document.querySelector('#roundResP').classList.remove('playing');
+}
+
+// removes the choiceBtns from the screen
 function removeChoiceBtns(){
     divChoice.removeChild(rockBtn);
     divChoice.removeChild(paperBtn);
