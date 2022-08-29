@@ -78,7 +78,7 @@ function playRound(playerChoice){
 function gameStatus(){
     scoreP.classList.add("playing");
     const gameWin = document.querySelector("#gameWin");
-    const gameLoss = document.querySelector("#gameWin");
+    const gameLoss = document.querySelector("#gameLoss");
     const backMusic = document.querySelector("#backMusic");
 
     if (playerPts >= 3){
