@@ -32,7 +32,7 @@ button {
 
 #roundInfoContainer {
     font-size: 32px;
-    visibility: hidden;
+    display: none;
 }
 
 #choiceContainer {

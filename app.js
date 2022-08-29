@@ -130,7 +130,7 @@ gameBtn.addEventListener('click', () => {
     roundResP.textContent = '';
     document.querySelector('#backMusic').play();
     document.querySelector('#introContainer').style.display = 'none';
-    document.querySelector('#roundInfoContainer').style.visibility = 'visible';
+    document.querySelector('#roundInfoContainer').style.display = 'flex';
 
     const rockBtn = document.createElement('button');
     rockBtn.setAttribute("id", 'rockBtn');
@@ -181,6 +181,6 @@ divChoice.addEventListener('click', function(e){
     document.querySelector('#introTxt').textContent = 'Dr. Robotnik has challenged \
         you to another game of Tails, Sonic, and Knuckles!';
     document.querySelector('#introContainer').style.display = 'flex';
+    document.querySelector('#roundInfoContainer').style.display = 'none';
 }
 
-//Add Music with Event Listener (to Reloop when done)
