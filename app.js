@@ -48,23 +48,23 @@ function playRound(playerChoice){
     let playerResult = RocPapSciMatrix[playerChoice][computerChoice];
     computerChoice = CapFirstLetterStr(computerChoice);
     playerChoice = CapFirstLetterStr(playerChoice);
-
+    let roundMsg = `Robotnik chose ${computerChoice} and Player chose ${playerChoice}...`;
+    
     switch(playerResult){
         case 'win':
             playerPts++;
-            roundResP.textContent=`Round Won: ${playerChoice} beats ${computerChoice}`;
-            roundResP.classList.add("playing");
+            roundMsg += `Round Won: ${playerChoice} beats ${computerChoice}`;
             break;
         case 'tie':
-            roundResP.textContent=`Round Tied: ${playerChoice} ties ${computerChoice}`;
-            roundResP.classList.add("playing");
+            roundMsg += `Round Tied: ${playerChoice} ties ${computerChoice}`;
             break;
         case 'lose':
             cpuPts++;
-            roundResP.textContent=`Round Loss: ${playerChoice} loses to ${computerChoice}`;
-            roundResP.classList.add("playing");
+            roundMsg += `Round Loss: ${playerChoice} loses to ${computerChoice}`;
             break;
     }
+    roundResP.textContent = roundMsg;
+    roundResP.classList.add("playing");
     updateScore();
     gameStatus();
 }
