@@ -53,13 +53,16 @@ function playRound(playerChoice){
         case 'win':
             playerPts++;
             roundResP.textContent=`Round Won: ${playerChoice} beats ${computerChoice}`;
+            roundResP.classList.add("playing");
             break;
         case 'tie':
             roundResP.textContent=`Round Tied: ${playerChoice} ties ${computerChoice}`;
+            roundResP.classList.add("playing");
             break;
         case 'lose':
             cpuPts++;
             roundResP.textContent=`Round Loss: ${playerChoice} loses to ${computerChoice}`;
+            roundResP.classList.add("playing");
             break;
     }
     updateScore();
@@ -72,11 +75,16 @@ function playRound(playerChoice){
  * Updates roundResP to tell the player who won the game
  */
 function gameStatus(){
+    scoreP.classList.add("playing");
     if (playerPts >= 3){
+        document.querySelector('#backMusic').pause();
+        document.querySelector("#gameWin").play();
         roundResP.textContent = "THE PLAYER HAS DEFEATED DOCTOR ROBOTNIK";
         endGame();
     } else if (cpuPts >= 3){
-        roundResP.textContent = "DOCTOR ROBOTNIK HAS TAKEN OVER!"
+        document.querySelector('#backMusic').pause();
+        document.querySelector("#gameLoss").play();
+        roundResP.textContent = "DOCTOR ROBOTNIK HAS TAKEN OVER!";
         endGame();
     }
  
@@ -128,6 +136,8 @@ const divChoice = document.querySelector('#choiceContainer');
 //Creates rock, paper, scissor, buttons then sets itself to invisible.
 gameBtn.addEventListener('click', () => {
     roundResP.textContent = 'Choose Tails, Sonic, Or Knuckles';
+    document.querySelector("#gameLoss").pause();
+    document.querySelector("#gameWin").pause();
     document.querySelector('#backMusic').play();
     document.querySelector('#introContainer').style.display = 'none';
     document.querySelector('#roundInfoContainer').style.display = 'flex';
@@ -184,3 +194,12 @@ divChoice.addEventListener('click', function(e){
     document.querySelector('#roundInfoContainer').style.display = 'none';
 }
 
+//TRANSITIONS
+function removeTransition(e) {
+    if(e.propertyName !== 'transform') return;
+    this.classList.remove('playing');
+    
+}
+
+const keys = document.querySelectorAll('p');
+keys.forEach(key => key.addEventListener('transitionend', removeTransition));
