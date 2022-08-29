@@ -48,7 +48,7 @@ function playRound(playerChoice){
     let playerResult = RocPapSciMatrix[playerChoice][computerChoice];
     computerChoice = CapFirstLetterStr(computerChoice);
     playerChoice = CapFirstLetterStr(playerChoice);
-    let roundMsg = `Robotnik chose ${computerChoice} and Player chose ${playerChoice}...`;
+    let roundMsg = `Robotnik chose ${computerChoice} and Player chose ${playerChoice}... `;
     
     switch(playerResult){
         case 'win':
