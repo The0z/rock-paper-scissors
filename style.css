@@ -56,7 +56,11 @@ button {
     font-size: 20px;
     font-family: Impact, sans-serif;
     font-weight: bolder;
+    transition: all .09s ease;
+}
 
+#gameBtn:hover {
+    transform: scale(1.2);
 }
 
 #hero {
@@ -108,6 +112,7 @@ button {
 .choiceImg:hover {
     transform: scale(1.2);
 }
+
 
 @media only screen and (max-width: 1000px){
     .choiceImg {
