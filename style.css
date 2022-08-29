@@ -16,6 +16,8 @@ p{
     padding-left: 15px;
     padding-right: 15px;
     background-color: rgba(3, 78, 252, 0.75) ;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 button {
