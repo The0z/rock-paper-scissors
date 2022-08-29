@@ -83,8 +83,8 @@ function gameStatus(){
 }
 
 function updateScore(){
-    document.querySelector('#scoreP').textContent = `Player has ${playerPts}pts vs 
-        CPU's ${cpuPts}pts`;
+    document.querySelector('#scoreP').innerHTML = `PLAYER: ${playerPts}<br> 
+        ROBOTNIK: ${cpuPts}`;
 }
 
 /** 
@@ -127,7 +127,7 @@ const divChoice = document.querySelector('#choiceContainer');
 
 //Creates rock, paper, scissor, buttons then sets itself to invisible.
 gameBtn.addEventListener('click', () => {
-    roundResP.textContent = '';
+    roundResP.textContent = 'Choose Tails, Sonic, Or Knuckles';
     document.querySelector('#backMusic').play();
     document.querySelector('#introContainer').style.display = 'none';
     document.querySelector('#roundInfoContainer').style.display = 'flex';
