@@ -178,7 +178,6 @@ gameBtn.addEventListener('click', () => {
 divChoice.addEventListener('click', function(e){
     if(e.target){
         if(e.target.id === 'rockImg'){
-            querySelector('rockImg').classList.add('playing');
             playRound(rock);
         } else if (e.target.id === 'paperImg'){
             playRound(paper);
@@ -217,5 +216,7 @@ function removeTransition(e) {
     
 }
 
-const buttonPresses = document.querySelectorAll('.transitionP',".imgChoices");
+const buttonPresses = document.querySelectorAll('.transitionP');
 buttonPresses.forEach(buttonPress => buttonPress.addEventListener('transitionend', removeTransition));
+
+

@@ -102,6 +102,11 @@ button {
 .choiceImg {
     width: 200px;
     height: 200px;
+    transition: all .09s ease;
+}
+
+.choiceImg:hover {
+    transform: scale(1.2);
 }
 
 @media only screen and (max-width: 1000px){
