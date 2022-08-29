@@ -85,6 +85,7 @@ button {
     display: flex;
     background-color: #024BFB;
     width: 100vw;
+    height: 50px;
     justify-content: center;
     padding: 10px 10px;
     box-sizing: border-box;
