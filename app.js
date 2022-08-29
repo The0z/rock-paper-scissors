@@ -130,20 +130,21 @@ gameBtn.addEventListener('click', () => {
     roundResP.textContent = '';
     document.querySelector('#backMusic').play();
     document.querySelector('#introContainer').style.display = 'none';
+    document.querySelector('#roundInfoContainer').style.visibility = 'visible';
 
     const rockBtn = document.createElement('button');
     rockBtn.setAttribute("id", 'rockBtn');
-    //rockBtn.innerHTML = '<img class="choiceImg" src="./imgs/TailsLarge.jpg"><img>';
-    rockBtn.textContent = rock.toUpperCase();
+    rockBtn.innerHTML = '<img  id="rockImg" class="choiceImg" src="./imgs/TailsLarge.jpg"><img>';
+    //rockBtn.textContent = rock.toUpperCase();
     
     const paperBtn = document.createElement('button');
     paperBtn.setAttribute("id", 'paperBtn');
-    paperBtn.innerHTML = '<img class="choiceImg" src="./imgs/SonicLarge.jpg"><img>';
+    paperBtn.innerHTML = '<img id="paperImg" class="choiceImg" src="./imgs/SonicLarge.jpg"><img>';
     //paperBtn.textContent = paper.toUpperCase();
 
     const scissorBtn = document.createElement('button');
     scissorBtn.setAttribute("id", 'scissorBtn');
-    scissorBtn.innerHTML = '<img class="choiceImg" src="./imgs/KnucklesLarge.jpg"><img>';
+    scissorBtn.innerHTML = '<img id="scissorImg" class="choiceImg" src="./imgs/KnucklesLarge.jpg"><img>';
     //scissorBtn.textContent = scissors.toUpperCase();
 
     divChoice.appendChild(rockBtn);
@@ -156,11 +157,11 @@ gameBtn.addEventListener('click', () => {
 // Required otherwise dynamically created buttons will not attach listener to
 divChoice.addEventListener('click', function(e){
     if(e.target){
-        if(e.target.id === 'rockBtn'){
+        if(e.target.id === 'rockImg'){
             playRound(rock);
-        } else if (e.target.id === 'paperBtn'){
+        } else if (e.target.id === 'paperImg'){
             playRound(paper);
-        } else if (e.target.id === 'scissorBtn'){
+        } else if (e.target.id === 'scissorImg'){
             playRound(scissors);
         }
     
