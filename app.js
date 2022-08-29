@@ -76,14 +76,20 @@ function playRound(playerChoice){
  */
 function gameStatus(){
     scoreP.classList.add("playing");
+    const gameWin = document.querySelector("#gameWin");
+    const gameLoss = document.querySelector("#gameWin");
+    const backMusic = document.querySelector("#backMusic");
+
     if (playerPts >= 3){
-        document.querySelector('#backMusic').pause();
-        document.querySelector("#gameWin").play();
+        backMusic.pause();
+        gameWin.load(); //reload the music.
+        gameWin.play();
         roundResP.textContent = "THE PLAYER HAS DEFEATED DOCTOR ROBOTNIK";
         endGame();
     } else if (cpuPts >= 3){
-        document.querySelector('#backMusic').pause();
-        document.querySelector("#gameLoss").play();
+        backMusic.pause();
+        gameLoss.load();
+        gameLoss.play();
         roundResP.textContent = "DOCTOR ROBOTNIK HAS TAKEN OVER!";
         endGame();
     }
@@ -201,5 +207,5 @@ function removeTransition(e) {
     
 }
 
-const keys = document.querySelectorAll('p');
-keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+const buttonPresses = document.querySelectorAll('p');
+buttonPresses.forEach(buttonPress => buttonPress.addEventListener('transitionend', removeTransition));
