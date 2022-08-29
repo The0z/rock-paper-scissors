@@ -151,17 +151,20 @@ gameBtn.addEventListener('click', () => {
 
     const rockBtn = document.createElement('button');
     rockBtn.setAttribute("id", 'rockBtn');
-    rockBtn.innerHTML = '<img  id="rockImg" class="choiceImg" src="./imgs/TailsLarge.jpg"><img>';
+    rockBtn.innerHTML = '<img  id="rockImg" class="choiceImg" \
+        draggable="false" src="./imgs/TailsLarge.jpg"><img>';
     //rockBtn.textContent = rock.toUpperCase();
     
     const paperBtn = document.createElement('button');
     paperBtn.setAttribute("id", 'paperBtn');
-    paperBtn.innerHTML = '<img id="paperImg" class="choiceImg" src="./imgs/SonicLarge.jpg"><img>';
+    paperBtn.innerHTML = '<img id="paperImg" class="choiceImg" \
+        draggable="false" src="./imgs/SonicLarge.jpg"><img>';
     //paperBtn.textContent = paper.toUpperCase();
 
     const scissorBtn = document.createElement('button');
     scissorBtn.setAttribute("id", 'scissorBtn');
-    scissorBtn.innerHTML = '<img id="scissorImg" class="choiceImg" src="./imgs/KnucklesLarge.jpg"><img>';
+    scissorBtn.innerHTML = '<img id="scissorImg" class="choiceImg" \
+       draggable="false" src="./imgs/KnucklesLarge.jpg"><img>';
     //scissorBtn.textContent = scissors.toUpperCase();
 
     divChoice.appendChild(rockBtn);
