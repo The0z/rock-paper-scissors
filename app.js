@@ -178,6 +178,7 @@ gameBtn.addEventListener('click', () => {
 divChoice.addEventListener('click', function(e){
     if(e.target){
         if(e.target.id === 'rockImg'){
+            querySelector('rockImg').classList.add('playing'))
             playRound(rock);
         } else if (e.target.id === 'paperImg'){
             playRound(paper);
@@ -193,9 +194,7 @@ divChoice.addEventListener('click', function(e){
  * 
  */
  function endGame(){
-    divChoice.removeChild(rockBtn);
-    divChoice.removeChild(paperBtn);
-    divChoice.removeChild(scissorBtn);
+    removeChoiceBtns();
     playerPts = 0;
     cpuPts = 0;
     document.querySelector('#introTxt').textContent = 'Dr. Robotnik has challenged \
@@ -205,6 +204,12 @@ divChoice.addEventListener('click', function(e){
     document.querySelector('#scoreP').classList.remove('playing'); //Fixes scoreP transition bug.
 }
 
+function removeChoiceBtns(){
+    divChoice.removeChild(rockBtn);
+    divChoice.removeChild(paperBtn);
+    divChoice.removeChild(scissorBtn);
+}
+
 //TRANSITIONS
 function removeTransition(e) {
     if(e.propertyName !== 'transform') return;
@@ -212,5 +217,5 @@ function removeTransition(e) {
     
 }
 
-const buttonPresses = document.querySelectorAll('.transitionP');
+const buttonPresses = document.querySelectorAll('.transitionP',".imgChoices");
 buttonPresses.forEach(buttonPress => buttonPress.addEventListener('transitionend', removeTransition));
